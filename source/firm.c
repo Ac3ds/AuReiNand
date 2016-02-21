@@ -36,9 +36,16 @@ u8 loadFirm(u8 a9lhBoot){
 
     section = firmLocation->section;
 
+    /* If it's a recovery sd, boot emunand on top of 9.0 FIRM
+       no matter what */
+    if (a9lhSetup && fileExists("/rei/recoverysd"))
+    {
+        updatedSys = 1;
+        mode = 0;
+    }
     /* If L is pressed, and on an updated SysNAND setup the SAFE MODE combo
        is not pressed, boot 9.0 FIRM */
-    if((pressed & BUTTON_L1) && !(updatedSys && pressed == SAFEMODE)) mode = 0;
+    else if((pressed & BUTTON_L1) && !(updatedSys && pressed == SAFEMODE)) mode = 0;
 
     //If not using an A9LH setup, do so by decrypting FIRM0
     if(!a9lhSetup && !mode){
