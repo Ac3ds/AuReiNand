@@ -1,6 +1,6 @@
 # AuReiNand
 *A modification of the ReiNand custom firmware*
-
+PLEASE TEST THIS AT YOUR OWN RISK I DO NOT HAVE IT FULLY TESTED WITH MY MODIFACATION.
 **Compiling:**
 
 You'll need armips added to your Path. [HERE](https://www.dropbox.com/s/ceuv2qeqp38lpah/armips.exe?dl=0) is a pre-compiled version.
